@@ -60,7 +60,7 @@ async function fetchInstagramDataFromSnapins(urlIgPost) {
 
 // --- Rute Express ---
 module.exports = function (app) {
-  const creatorName = "RyuuXiao";
+  const creatorName = "Painzy";
 
   app.get('/download/instagram', async (req, res) => {
     const { url } = req.query;

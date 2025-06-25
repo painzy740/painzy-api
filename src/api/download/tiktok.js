@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = (app) => {
-    const creatorName = "RyuuXiao"; // Nama creator Anda
+    const creatorName = "Painzy"; // Nama creator Anda
 
     app.get('/download/tiktok', async (req, res) => {
         const { url } = req.query; // Menggunakan 'url' sudah benar
