@@ -13,23 +13,23 @@
   "links": [
     {
       "url": "https://github.com/painzy740/painzy-api",
-      "name": "⭐ Star Repository",
+      "name": "Star Repository",
       "icon": "fab fa-github"
     },
     {
       "url": "https://api.painzy.web.id",
-      "name": "📖 Documentation",
+      "name": "Documentation",
       "icon": "fas fa-book-open"
     },
     {
       "url": "https://discord.gg/unionpure",
-      "name": "💬 Join Community",
+      "name": "Join Community",
       "icon": "fab fa-discord"
     }
   ],
   "categories": [
     {
-      "name": "🧠 Artificial Intelligence",
+      "name": "Artificial Intelligence",
       "icon": "fas fa-brain",
       "description": "Cutting-edge AI models for every use case",
       "items": [
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "name": "🎲 Random Content",
+      "name": "Random Content",
       "icon": "fas fa-dice-d20",
       "description": "Curated random content for inspiration",
       "items": [
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "name": "🔍 Search & Discovery",
+      "name": "Search & Discovery",
       "icon": "fas fa-search-plus",
       "description": "Powerful search tools across platforms",
       "items": [
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "name": "📥 Media Downloader",
+      "name": "Media Downloader",
       "icon": "fas fa-cloud-download-alt",
       "description": "High-quality media extraction tools",
       "items": [
@@ -224,7 +224,7 @@
       ]
     },
     {
-      "name": "🕵️ Social Intelligence",
+      "name": "Social Intelligence",
       "icon": "fas fa-user-ninja",
       "description": "Advanced social media analytics",
       "items": [
@@ -264,7 +264,7 @@
       ]
     },
     {
-      "name": "💳 Payment Gateway",
+      "name": "Payment Gateway",
       "icon": "fas fa-credit-card",
       "description": "Enterprise-grade payment solutions",
       "items": [
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "name": "🛠️ Creative Studio",
+      "name": "Creative Studio",
       "icon": "fas fa-magic",
       "description": "Professional creative and utility tools",
       "items": [
