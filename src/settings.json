@@ -240,6 +240,17 @@
           }
         },
         {
+          "name": "Nik Parser",
+          "desc": "NikParse is a tool to extract and analyze Indonesian National Identity Numbers (NIK), providing detailed information such as region, gender, and date of birth.",
+          "path": "/tools/nik-parse?nik=&apikey=",
+          "status": "ready",
+          "tags": ["Osint", "Data"],
+          "params": {
+            "nik": "Indonesian National Identity Number (NIK)",
+            "apikey": "Your API key"
+          }
+        },
+        {
           "name": "ML First TopUp Checker",
           "desc": "Advanced first purchase bonus verification system",
           "path": "/stalk/mlbb2?userId=&zoneId=&apikey=",
