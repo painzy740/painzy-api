@@ -142,7 +142,7 @@ async function calculateDistanceAndTimes(cityAName, cityBName, unitInput = 'km')
 
 // --- Rute Express ---
 module.exports = function (app) {
-  const creatorName = "ZenzzXD";
+  const creatorName = "Painzy";
 
   app.get('/tools/distance', async (req, res) => {
     const { cityA, cityB, unit } = req.query;

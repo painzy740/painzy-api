@@ -21,7 +21,7 @@ module.exports = function(app) {
       res.status(200).json({
         status,
         statusCode,
-        creator: 'RyuuXiao',
+        creator: 'Painzy',
         result
       });
 
