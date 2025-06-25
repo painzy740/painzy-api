@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Painzy API - Modern & Powerful API Collection. Built for developers, designed for excellence. Access AI, media downloaders, tools, and more.">
+    <meta name="keywords" content="API, Painzy API, REST API, AI API, Developer Tools, Modern API, Free API">
+    <meta name="author" content="Painzy Team">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://api.painzy.web.id">
+    <meta property="og:title" content="Painzy API - Modern & Powerful API Collection">
+    <meta property="og:description" content="Built for developers, designed for excellence. Access cutting-edge AI, media downloaders, creative tools, and more.">
+    <meta property="og:image" content="/src/banner.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://api.painzy.web.id">
+    <meta property="twitter:title" content="Painzy API - Modern & Powerful API Collection">
+    <meta property="twitter:description" content="Built for developers, designed for excellence. Access cutting-edge AI, media downloaders, creative tools, and more.">
+    <meta property="twitter:image" content="/src/banner.jpg">
+    <link rel="icon" href="/src/icon.png" type="image/png">
+    <title id="page">Painzy API</title>
+    
+    <!-- Enhanced Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Performance Hints -->
+    <link rel="dns-prefetch" href="//api.painzy.web.id">
+    <link rel="preload" href="/styles.css" as="style">
+</head>
+<body>
+    <!-- Enhanced Loading Screen -->
+    <div id="loadingScreen" role="status" aria-live="polite">
+        <div class="spinner-wrapper">
+            <svg class="spinner-logo" width="100" height="100" viewBox="0 0 100 100" aria-hidden="true">
+                <defs>
+                    <linearGradient id="spinnerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle class="spinner-path" cx="50" cy="50" r="40" fill="none" stroke="#e2e8f0" stroke-width="6" />
+                <circle class="spinner-animation" cx="50" cy="50" r="40" fill="none" stroke="url(#spinnerGradient)" stroke-width="6" />
+            </svg>
+            <p>Loading Painzy API<span class="loading-dots">...</span></p>
+            <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
+                Preparing the best API experience for you ✨
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Side Navigation -->
+    <aside class="side-nav" id="sideNavigation" aria-label="Navigasi Utama">
+        <div class="side-nav-logo">
+            <img src="/src/icon.png" alt="Painzy API Logo" style="width: 45px; height: 45px; border-radius: 12px;">
+            <span id="sideNavName">Painzy</span>
+            <div id="versionHeader" class="badge-pill"></div>
+        </div>
+        
+        <nav class="side-nav-links" aria-label="Tautan navigasi">
+            <a href="#home" class="side-nav-link active" aria-current="page">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <span>Home</span>
+            </a>
+            <a href="#apis" class="side-nav-link">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <span>APIs</span>
+            </a>
+            <a href="https://github.com/painzy740/painzy-api" target="_blank" rel="noopener noreferrer" class="side-nav-link">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://api.painzy.web.id" target="_blank" rel="noopener noreferrer" class="side-nav-link">
+                <i class="fas fa-book" aria-hidden="true"></i>
+                <span>Docs</span>
+            </a>
+            <a href="https://discord.gg/unionpure" target="_blank" rel="noopener noreferrer" class="side-nav-link">
+                <i class="fab fa-discord" aria-hidden="true"></i>
+                <span>Discord</span>
+            </a>
+        </nav>
+        
+        <button class="nav-collapse-btn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sideNavigation">
+            <i class="fas fa-angle-left" aria-hidden="true"></i>
+        </button>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+        <!-- Enhanced Header -->
+        <header class="main-header" role="banner">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="sideNavigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            
+            <div class="search-container" role="search">
+                <div class="input-group">
+                    <span class="input-group-text" aria-hidden="true">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search APIs, tools, and more..." aria-label="Search APIs">
+                    <button class="clear-search" id="clearSearch" aria-label="Clear search">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <button class="notification-bell" id="notificationBell" aria-label="Notifications">
+                    <i class="far fa-bell" aria-hidden="true"></i>
+                    <span class="notification-badge" id="notificationBadge" aria-hidden="true"></span>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main id="mainContent">
+            <!-- Enhanced Hero Section -->
+            <section id="home" class="hero-section" aria-labelledby="heroHeading">
+                <div class="hero-content">
+                    <div class="hero-heading">
+                        <h1 id="name" class="gradient-text">Painzy API</h1>
+                        <div id="version" class="badge-pill">v2.0</div>
+                    </div>
+                    
+                    <p id="description" class="hero-description">
+                        Modern & Powerful API Collection - Built for Developers, Designed for Excellence.
+                    </p>
+                    
+                    <div id="apiLinks" class="hero-actions">
+                        <a href="https://github.com/painzy740/painzy-api" target="_blank" rel="noopener noreferrer" class="api-link" style="animation-delay: 0s;" aria-label="Star on GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i> 
+                            🌟 Star on GitHub
+                        </a>
+                        <a href="https://api.painzy.web.id" target="_blank" rel="noopener noreferrer" class="api-link" style="animation-delay: 0.1s;" aria-label="View Documentation">
+                            <i class="fas fa-book" aria-hidden="true"></i> 
+                            📚 Documentation
+                        </a>
+                        <a href="https://discord.gg/unionpure" target="_blank" rel="noopener noreferrer" class="api-link" style="animation-delay: 0.2s;" aria-label="Join Discord">
+                            <i class="fab fa-discord" aria-hidden="true"></i> 
+                            💬 Join Discord
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="banner-container">
+                        <img id="dynamicImage" class="banner" src="/src/banner.jpg" alt="Painzy API Banner">
+                    </div>
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </section>
+            
+            <!-- Enhanced API Section -->
+            <section id="apis" class="api-section" aria-labelledby="apiSectionTitle">
+                <h2 id="apiSectionTitle" class="section-title">🚀 Available APIs</h2>
+                <p class="section-description">
+                    Explore our comprehensive collection of powerful, modern APIs designed to accelerate your development workflow.
+                </p>
+                
+                <div class="tab-content" id="apiContent">
+                    <!-- API content will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+        
+        <!-- Enhanced Footer -->
+        <footer class="main-footer" role="contentinfo">
+            <div class="footer-content">
+                <div id="wm" class="copyright">© 2025 Painzy Team. All rights reserved.</div>
+                
+                <div class="footer-middle">
+                    <div class="theme-switcher">
+                        <span>☀️ Light</span>
+                        <label class="switch" aria-label="Toggle dark/light theme">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider round" aria-hidden="true"></span>
+                        </label>
+                        <span>🌙 Dark</span>
+                    </div>
+                </div>
+                
+                <nav class="footer-links" aria-label="Additional links">
+                    <a href="https://discord.gg/painzy" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fab fa-discord" aria-hidden="true"></i> Community
+                    </a>
+                    <a href="https://docs.painzy.dev" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fas fa-book" aria-hidden="true"></i> Docs
+                    </a>
+                    <a href="https://github.com/painzy-api" target="_blank" rel="noopener noreferrer" class="footer-link">
+                        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                    </a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Enhanced Modal -->
+    <div class="modal fade" id="apiResponseModal" tabindex="-1" aria-labelledby="apiResponseModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" id="modalDialog" role="document">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <div>
+                        <h3 class="modal-title" id="apiResponseModalLabel">API Endpoint</h3>
+                        <p class="modal-desc mb-0" id="apiResponseModalDesc">API description will appear here.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </header>
+                <div class="modal-body">
+                    <section class="endpoint-container" aria-labelledby="endpointLabel">
+                        <div class="endpoint-label">
+                            <span id="endpointLabel">🔗 Endpoint</span>
+                            <button class="copy-btn" id="copyEndpoint" title="Copy to clipboard" aria-label="Copy endpoint">
+                                <i class="far fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <pre id="apiEndpoint" class="code-block" tabindex="0"></pre>
+                    </section>
+                    
+                    <div id="apiQueryInputContainer" class="query-input-container">
+                        <!-- Dynamic parameter inputs will be inserted here -->
+                    </div>
+                    
+                    <div id="apiResponseLoading" class="d-none" role="status" aria-live="polite">
+                        <svg class="spinner-logo" width="60" height="60" viewBox="0 0 100 100" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="loadingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle class="spinner-path" cx="50" cy="50" r="40" fill="none" stroke="#e2e8f0" stroke-width="6" />
+                            <circle class="spinner-animation" cx="50" cy="50" r="40" fill="none" stroke="url(#loadingGradient)" stroke-width="6" />
+                        </svg>
+                        <p>Processing your request...</p>
+                    </div>
+                    
+                    <section class="response-container d-none" id="responseContainer" aria-labelledby="responseLabel">
+                        <div class="response-label">
+                            <span id="responseLabel">📋 Response</span>
+                            <button class="copy-btn" id="copyResponse" title="Copy to clipboard" aria-label="Copy response">
+                                <i class="far fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <pre id="apiResponseContent" class="code-block d-none" tabindex="0"></pre>
+                    </section>
+                </div>
+                <footer class="modal-footer">
+                    <button id="submitQueryBtn" class="btn btn-primary" disabled>
+                        <span>Send Request</span>
+                        <i class="fas fa-paper-plane ms-2" aria-hidden="true"></i>
+                    </button>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <header class="toast-header">
+                <i class="toast-icon fas fa-info-circle me-2" aria-hidden="true"></i>
+                <strong class="me-auto toast-title">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </header>
+            <div class="toast-body">
+                This is a notification message.
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
