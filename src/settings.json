@@ -1,0 +1,384 @@
+{
+  "name": "Painzy API",
+  "version": "v1.0.0",
+  "description": "Next-Generation API Platform - Where Innovation Meets Performance",
+  "bannerImage": "/src/banner.jpg",
+  "header": {
+    "status": "⚡ LIVE"
+  },
+  "apiSettings": {
+    "creator": "Painzy",
+    "apikey": ["attakistars"]
+  },
+  "links": [
+    {
+      "url": "https://github.com/painzy740/painzy-api",
+      "name": "⭐ Star Repository",
+      "icon": "fab fa-github"
+    },
+    {
+      "url": "https://api.painzy.web.id",
+      "name": "📖 Documentation",
+      "icon": "fas fa-book-open"
+    },
+    {
+      "url": "https://discord.gg/unionpure",
+      "name": "💬 Join Community",
+      "icon": "fab fa-discord"
+    }
+  ],
+  "categories": [
+    {
+      "name": "🧠 Artificial Intelligence",
+      "icon": "fas fa-brain",
+      "description": "Cutting-edge AI models for every use case",
+      "items": [
+        {
+          "name": "ChatGPT Turbo",
+          "desc": "Lightning-fast conversational AI with advanced reasoning capabilities",
+          "path": "/ai/gptturbo?text=",
+          "status": "ready",
+          "tags": ["Popular", "Fast"]
+        },
+        {
+          "name": "Dopple AI",
+          "desc": "Interactive AI companion with dynamic personality adaptation",
+          "path": "/ai/dopple?text=",
+          "status": "ready",
+          "tags": ["Interactive", "Personality"],
+          "params": {
+            "text": "Your message to Dopple AI"
+          }
+        },
+        {
+          "name": "Felo Search AI",
+          "desc": "Intelligent search engine with contextual understanding",
+          "path": "/ai/felo?text=",
+          "status": "ready",
+          "tags": ["Search", "Context"],
+          "params": {
+            "text": "Your search query"
+          }
+        },
+        {
+          "name": "Koyuki Iceflow",
+          "desc": "Cheerful AI assistant with emotional intelligence",
+          "path": "/ai/koyuki?text=",
+          "status": "ready",
+          "tags": ["Friendly", "Emotional"],
+          "params": {
+            "text": "Chat with Koyuki"
+          }
+        },
+        {
+          "name": "Staries Ai",
+          "desc": "Staries AI is a stylish and sharp virtual assistant – cool like a starboy, smart like your favorite coder. Whether it’s debugging code or chatting casually, he’s got your back",
+          "path": "/ai/staries?text=",
+          "status": "ready",
+          "tags": ["Cool", "Coder"],
+          "params": {
+            "text": "Chat with Staries"
+          }
+        },
+        {
+          "name": "Lumin AI",
+          "desc": "Brilliant AI with advanced analytical capabilities",
+          "path": "/ai/lumin?text=",
+          "status": "ready",
+          "tags": ["Analytics", "Smart"],
+          "params": {
+            "text": "Your question for Lumin"
+          }
+        },
+        {
+          "name": "Venice AI",
+          "desc": "Sophisticated AI with artistic and creative flair",
+          "path": "/ai/veniceai?text=",
+          "status": "ready",
+          "tags": ["Creative", "Artistic"],
+          "params": {
+            "text": "Your creative prompt"
+          }
+        },
+        {
+          "name": "GPT-4.1 Vision",
+          "desc": "Advanced multimodal AI with image understanding",
+          "path": "/ai/gpt-4.1?text=&imageUrl=",
+          "status": "ready",
+          "tags": ["Vision", "Multimodal"],
+          "params": {
+            "text": "Your message or question",
+            "imageUrl": "Image URL for analysis (optional)"
+          }
+        },
+        {
+          "name": "OpenAI Assistant",
+          "desc": "Official OpenAI integration with enterprise reliability",
+          "path": "/ai/openai?text=",
+          "status": "ready",
+          "tags": ["Official", "Reliable"],
+          "params": {
+            "text": "Your query for OpenAI"
+          }
+        },
+        {
+          "name": "Claude AI",
+          "desc": "Anthropic's Claude for thoughtful and nuanced conversations",
+          "path": "/ai/claude?text=",
+          "status": "ready",
+          "tags": ["Thoughtful", "Nuanced"],
+          "params": {
+            "text": "Your message for Claude"
+          }
+        },
+        {
+          "name": "Blackbox AI",
+          "desc": "Code-specialized AI with advanced debugging capabilities",
+          "path": "/ai/blackbox?text=&imageUrl=&sessionid=",
+          "status": "ready",
+          "tags": ["Code", "Debug"],
+          "params": {
+            "text": "Your coding question or prompt",
+            "imageUrl": "Code screenshot URL (optional)",
+            "sessionid": "Session ID for context (optional)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🎲 Random Content",
+      "icon": "fas fa-dice-d20",
+      "description": "Curated random content for inspiration",
+      "items": [
+        {
+          "name": "Blue Archive Gallery",
+          "desc": "High-quality Blue Archive character artwork collection",
+          "path": "/random/ba",
+          "status": "ready",
+          "tags": ["Anime", "Gallery"]
+        }
+      ]
+    },
+    {
+      "name": "🔍 Search & Discovery",
+      "icon": "fas fa-search-plus",
+      "description": "Powerful search tools across platforms",
+      "items": [
+        {
+          "name": "YouTube Search",
+          "desc": "Advanced YouTube content discovery with metadata",
+          "path": "/search/youtube?q=",
+          "status": "ready",
+          "tags": ["Video", "Metadata"],
+          "params": {
+            "q": "Your search query"
+          }
+        }
+      ]
+    },
+    {
+      "name": "📥 Media Downloader",
+      "icon": "fas fa-cloud-download-alt",
+      "description": "High-quality media extraction tools",
+      "items": [
+        {
+          "name": "TikTok Downloader",
+          "desc": "Download TikTok videos in original quality without watermarks",
+          "path": "/download/tiktok?url=",
+          "status": "ready",
+          "tags": ["HD", "No Watermark"],
+          "params": {
+            "url": "TikTok video URL"
+          }
+        },
+        {
+          "name": "Instagram Downloader",
+          "desc": "Extract Instagram posts, reels, and stories with metadata",
+          "path": "/download/instagram?url=",
+          "status": "ready",
+          "tags": ["Stories", "Metadata"],
+          "params": {
+            "url": "Instagram post/reel URL"
+          }
+        },
+        {
+          "name": "YouTube Downloader",
+          "desc": "Download YouTube content in multiple formats and qualities",
+          "path": "/download/youtube?url=",
+          "status": "ready",
+          "tags": ["Multi-format", "Quality"],
+          "params": {
+            "url": "YouTube video URL"
+          }
+        },
+        {
+          "name": "Facebook Downloader",
+          "desc": "Extract Facebook videos with original quality preservation",
+          "path": "/download/facebook?url=",
+          "status": "ready",
+          "tags": ["Original Quality"],
+          "params": {
+            "url": "Facebook video URL"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🕵️ Social Intelligence",
+      "icon": "fas fa-user-ninja",
+      "description": "Advanced social media analytics",
+      "items": [
+        {
+          "name": "Mobile Legends Profile",
+          "desc": "Comprehensive Mobile Legends player analytics and statistics",
+          "path": "/stalk/mlbb?userId=&zoneId=",
+          "status": "ready",
+          "tags": ["Analytics", "Stats"],
+          "params": {
+            "userId": "Player User ID",
+            "zoneId": "Server Zone ID"
+          }
+        },
+        {
+          "name": "ML First TopUp Checker",
+          "desc": "Advanced first purchase bonus verification system",
+          "path": "/stalk/mlbb2?userId=&zoneId=&apikey=",
+          "status": "ready",
+          "tags": ["Verification", "Bonus"],
+          "params": {
+            "userId": "Player User ID",
+            "zoneId": "Server Zone ID",
+            "apikey": "Your API key"
+          }
+        },
+        {
+          "name": "Free Fire Profile",
+          "desc": "Detailed Free Fire player statistics and achievements",
+          "path": "/stalk/ff?id=",
+          "status": "ready",
+          "tags": ["Achievements", "Detailed"],
+          "params": {
+            "id": "Free Fire Player ID"
+          }
+        }
+      ]
+    },
+    {
+      "name": "💳 Payment Gateway",
+      "icon": "fas fa-credit-card",
+      "description": "Enterprise-grade payment solutions",
+      "items": [
+        {
+          "name": "QRIS Payment Generator",
+          "desc": "Dynamic QRIS payment code generation with real-time tracking",
+          "path": "/orderkuota/createpayment?apikey=&amount=&codeqr=",
+          "status": "ready",
+          "tags": ["Dynamic", "Real-time"],
+          "innerDesc": "🔐 Enterprise Feature - Contact us for premium access",
+          "params": {
+            "apikey": "Your enterprise API key",
+            "amount": "Payment amount in IDR",
+            "codeqr": "Unique QR identifier"
+          }
+        },
+        {
+          "name": "Payment Status Monitor",
+          "desc": "Real-time payment verification with webhook support",
+          "path": "/orderkuota/cekstatus?apikey=&merchant=&keyorkut=",
+          "status": "ready",
+          "tags": ["Real-time", "Webhooks"],
+          "innerDesc": "🔐 Enterprise Feature - Contact us for premium access",
+          "params": {
+            "apikey": "Your enterprise API key",
+            "merchant": "Merchant identifier",
+            "keyorkut": "Validation key"
+          }
+        }
+      ]
+    },
+    {
+      "name": "🛠️ Creative Studio",
+      "icon": "fas fa-magic",
+      "description": "Professional creative and utility tools",
+      "items": [
+        {
+          "name": "NGL Message Generator",
+          "desc": "Create authentic anonymous message interfaces",
+          "path": "/tools/ngl?title=&text=",
+          "status": "ready",
+          "tags": ["Anonymous", "Authentic"],
+          "params": {
+            "title": "Message title/sender",
+            "text": "Message content"
+          }
+        },
+        {
+          "name": "TikTok Profile Mockup",
+          "desc": "Generate professional TikTok profile mockups",
+          "path": "/tools/faketiktok?name=&username=&pp=",
+          "status": "ready",
+          "tags": ["Professional", "Mockup"],
+          "params": {
+            "name": "Display name",
+            "username": "TikTok username",
+            "pp": "Profile picture URL"
+          }
+        },
+        {
+          "name": "AI Image Enhancer",
+          "desc": "Professional image upscaling with AI enhancement",
+          "path": "/tools/remini?image=",
+          "status": "update",
+          "tags": ["AI", "Professional"],
+          "params": {
+            "image": "Image URL to enhance"
+          }
+        },
+        {
+          "name": "Emoji Fusion Studio",
+          "desc": "Advanced emoji blending with creative combinations",
+          "path": "/tools/emojimix?emoji1=&emoji2=",
+          "status": "ready",
+          "tags": ["Creative", "Fusion"],
+          "params": {
+            "emoji1": "First emoji (e.g., 😀)",
+            "emoji2": "Second emoji (e.g., 💀)"
+          }
+        },
+        {
+          "name": "Background Remover Pro",
+          "desc": "Professional background removal with edge refinement",
+          "path": "/tools/removebg?imageUrl=",
+          "status": "ready",
+          "tags": ["Professional", "Edge Refinement"],
+          "params": {
+            "imageUrl": "Image URL for background removal"
+          }
+        },
+        {
+          "name": "Distance Calculator Pro",
+          "desc": "Advanced distance calculation with route optimization",
+          "path": "/tools/distance?cityA=&cityB=&unit=",
+          "status": "ready",
+          "tags": ["Advanced", "Optimization"],
+          "params": {
+            "cityA": "Starting location",
+            "cityB": "Destination location",
+            "unit": "Distance unit (km/miles)"
+          }
+        },
+        {
+          "name": "Brat Style Generator",
+          "desc": "Transform text into trendy Brat-style graphics",
+          "path": "/sticker/brat?text=&apikey=",
+          "status": "ready",
+          "tags": ["Trendy", "Graphics"],
+          "params": {
+            "text": "Text to convert",
+            "apikey": "Your API key"
+          }
+        }
+      ]
+    }
+  ]
+}
