@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.get('/tools/nik-parse', (req, res) => {
+  app.get('/stalk/nik-parse', (req, res) => {
     try {
       const { apikey, nik } = req.query;
 
