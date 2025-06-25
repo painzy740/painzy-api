@@ -3,51 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Painzy API - Modern & Powerful API Collection. Built for developers, designed for excellence.">
-  <meta name="keywords" content="Painzy API, Modern API, Developer Tools, Free API, REST API">
-  <meta name="author" content="Painzy">
-  <title>Painzy API - Modern & Powerful API Collection</title>
+  <meta name="description" content="Painzy API - Next-Generation API Platform. Where Innovation Meets Performance.">
+  <meta name="keywords" content="Painzy API, Modern API, Developer Tools, Free API, REST API, Cyberpunk API">
+  <meta name="author" content="Painzy Labs">
+  <title>Painzy API - Next-Generation Platform</title>
   
   <!-- Enhanced Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   
   <style>
     :root {
-      /* Enhanced Color Palette */
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-      
-      --bg-light: #f8faff;
-      --bg-dark: #0f1419;
-      --text-light: #2d3748;
-      --text-dark: #f7fafc;
-      --card-light: #ffffff;
-      --card-dark: #1e2532;
-      --primary: #667eea;
-      --primary-dark: #5a6fd8;
-      --shadow: rgba(0, 0, 0, 0.1);
-      --glow: 0 0 20px rgba(102, 126, 234, 0.3);
-      
-      /* Glass Effect */
-      --glass-bg: rgba(255, 255, 255, 0.25);
-      --glass-border: rgba(255, 255, 255, 0.18);
+      /* Cyberpunk Color Palette */
+      --cyber-primary: #00ffff;
+      --cyber-secondary: #ff0080;
+      --cyber-accent: #ffff00;
+      --cyber-success: #00ff41;
+      --cyber-warning: #ff8c00;
+      --cyber-error: #ff073a;
+      --cyber-purple: #8a2be2;
+      --cyber-blue: #0080ff;
+
+      /* Advanced Gradients */
+      --gradient-cyber: linear-gradient(135deg, #00ffff 0%, #ff0080 50%, #ffff00 100%);
+      --gradient-neon: linear-gradient(45deg, #ff073a, #ff8c00, #ffff00, #00ff41, #00ffff, #0080ff, #8a2be2);
+      --gradient-hologram: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1), rgba(255, 255, 0, 0.1));
+
+      /* Dark Theme Base */
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-tertiary: #1a1a24;
+      --bg-glass: rgba(255, 255, 255, 0.03);
+      --bg-glass-strong: rgba(255, 255, 255, 0.08);
+
+      /* Text Colors */
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --text-muted: #808080;
+
+      /* Border & Effects */
+      --border-cyber: 1px solid rgba(0, 255, 255, 0.3);
+      --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+
+      /* Shadows & Glows */
+      --shadow-cyber: 0 0 20px rgba(0, 255, 255, 0.3);
+      --shadow-neon: 0 0 20px rgba(255, 0, 128, 0.3);
+      --shadow-deep: 0 20px 40px rgba(0, 0, 0, 0.5);
+      --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --glow-cyber: 0 0 30px rgba(0, 255, 255, 0.5);
+      --glow-neon: 0 0 30px rgba(255, 0, 128, 0.5);
+
+      /* Typography */
+      --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Orbitron", "Inter", sans-serif;
+
+      /* Transitions */
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-elastic: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       margin: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: var(--font-primary);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: var(--transition);
       position: relative;
       overflow-x: hidden;
+      min-height: 100vh;
     }
 
-    /* Animated Background */
+    /* Optimized Background */
     body::before {
       content: '';
       position: fixed;
@@ -56,77 +90,69 @@
       width: 100%;
       height: 100%;
       background: 
-        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.05) 0%, transparent 50%);
       z-index: -1;
-      animation: backgroundFloat 20s ease-in-out infinite;
+      animation: backgroundPulse 10s ease-in-out infinite;
     }
 
-    @keyframes backgroundFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      33% { transform: translateY(-10px) rotate(1deg); }
-      66% { transform: translateY(5px) rotate(-1deg); }
-    }
-
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-      --glass-bg: rgba(30, 37, 50, 0.4);
-      --glass-border: rgba(255, 255, 255, 0.1);
+    @keyframes backgroundPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
     #loader {
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: var(--bg-light);
+      background: var(--bg-primary);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
-      transition: all 0.3s;
+      transition: all 0.5s;
       flex-direction: column;
-    }
-
-    body.dark #loader {
-      background: var(--bg-dark);
     }
 
     .spinner {
       width: 60px;
       height: 60px;
       border: 4px solid transparent;
-      border-top: 4px solid var(--primary);
+      border-top: 4px solid var(--cyber-primary);
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin-bottom: 1rem;
-      background: conic-gradient(from 0deg, var(--primary), var(--primary-dark), var(--primary));
-      mask: radial-gradient(circle at center, transparent 50%, black 50%);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-cyber);
     }
 
     .loader-text {
-      font-size: 1.1rem;
-      font-weight: 600;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
-      background: var(--primary-gradient);
+      background: var(--gradient-cyber);
+      background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: gradientFlow 3s ease infinite;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .loader-subtitle {
       font-size: 0.9rem;
-      color: var(--text-light);
-      opacity: 0.7;
-    }
-
-    body.dark .loader-subtitle {
-      color: var(--text-dark);
+      color: var(--text-secondary);
+      opacity: 0.8;
     }
 
     @keyframes spin {
       to { transform: rotate(360deg); }
+    }
+
+    @keyframes gradientFlow {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
 
     #content {
@@ -139,92 +165,106 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.5rem 2rem;
-      background: var(--glass-bg);
+      background: var(--bg-glass-strong);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-bottom: var(--border-cyber);
+      box-shadow: var(--shadow-glass);
       position: sticky;
       top: 0;
       z-index: 100;
-      transition: all 0.3s;
-    }
-
-    body.dark header {
-      background: var(--glass-bg);
-      border-bottom: 1px solid var(--glass-border);
+      transition: var(--transition);
     }
 
     .brand {
       display: flex;
       align-items: center;
       font-size: 1.5rem;
-      font-weight: 800;
+      font-weight: 900;
       gap: 0.75rem;
     }
 
     .brand img {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      box-shadow: var(--shadow-cyber);
+      border: var(--border-cyber);
     }
 
     .brand-text {
-      background: var(--primary-gradient);
+      font-family: var(--font-display);
+      background: var(--gradient-cyber);
+      background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: gradientFlow 4s ease infinite;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .version {
-      background: var(--glass-bg);
+      background: var(--bg-glass-strong);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      color: var(--primary);
-      padding: 0.5rem 1rem;
+      border: var(--border-cyber);
+      color: var(--cyber-primary);
+      padding: 0.5rem 1.25rem;
       border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-glass);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* Enhanced Main Content */
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 4rem auto;
       padding: 0 2rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 1rem;
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      margin-bottom: 1.5rem;
       font-weight: 900;
-      background: var(--primary-gradient);
+      background: var(--gradient-cyber);
+      background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      background-size: 200% 200%;
-      animation: gradientShift 4s ease infinite;
+      animation: gradientFlow 4s ease infinite;
       letter-spacing: -0.02em;
+      text-transform: uppercase;
+      position: relative;
     }
 
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gradient-cyber);
+      border-radius: 2px;
+      animation: gradientFlow 3s ease infinite;
     }
 
-    p {
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      line-height: 1.7;
+    .subtitle {
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      line-height: 1.8;
       margin-bottom: 3rem;
-      color: var(--text-light);
-      opacity: 0.8;
+      color: var(--text-secondary);
       font-weight: 400;
-    }
-
-    body.dark p {
-      color: var(--text-dark);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Enhanced Illustration */
@@ -235,70 +275,66 @@
 
     .illustration img {
       width: 100%;
-      max-width: 500px;
+      max-width: 550px;
       border-radius: 24px;
-      box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-deep), var(--glow-cyber);
+      transition: var(--transition-elastic);
       transform: rotate(2deg);
-      background: var(--glass-bg);
+      background: var(--bg-glass-strong);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
+      border: var(--border-cyber);
     }
 
     .illustration img:hover {
       transform: rotate(0deg) translateY(-10px) scale(1.02);
-      box-shadow: 
-        0 35px 70px rgba(0, 0, 0, 0.2),
-        var(--glow);
+      box-shadow: var(--shadow-deep), var(--glow-neon);
     }
 
     /* Enhanced Button */
-    .buttons a {
+    .cta-button {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
-      padding: 1rem 2rem;
-      background: var(--primary-gradient);
-      color: white;
+      padding: 1.25rem 2.5rem;
+      background: var(--bg-glass-strong);
+      backdrop-filter: blur(20px);
+      border: var(--border-cyber);
+      color: var(--cyber-primary);
+      font-family: var(--font-display);
       font-weight: 700;
       text-decoration: none;
       border-radius: 16px;
-      box-shadow: 
-        0 10px 25px rgba(102, 126, 234, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-glass);
+      transition: var(--transition-elastic);
       font-size: 1.1rem;
       position: relative;
       overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .buttons a::before {
+    .cta-button::before {
       content: '';
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
+      background: var(--gradient-cyber);
+      opacity: 0.1;
+      transition: left 0.6s ease;
     }
 
-    .buttons a:hover::before {
-      left: 100%;
-    }
-
-    .buttons a:hover {
-      transform: translateY(-3px);
-      box-shadow: 
-        0 15px 35px rgba(102, 126, 234, 0.5),
-        var(--glow);
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: var(--shadow-deep), var(--glow-cyber);
       text-decoration: none;
+      color: var(--text-primary);
+      border-color: var(--cyber-primary);
     }
 
-    .buttons a:active {
-      transform: translateY(-1px);
+    .cta-button:hover::before {
+      left: 100%;
     }
 
     /* Enhanced Footer */
@@ -306,10 +342,28 @@
       text-align: center;
       padding: 3rem 2rem;
       font-size: 0.95rem;
-      background: var(--glass-bg);
+      background: var(--bg-glass-strong);
       backdrop-filter: blur(20px);
-      border-top: 1px solid var(--glass-border);
+      border-top: var(--border-cyber);
       margin-top: 4rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-hologram);
+      opacity: 0.03;
+      z-index: 1;
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
     }
 
     .theme-toggle {
@@ -318,13 +372,13 @@
       justify-content: center;
       align-items: center;
       gap: 1rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .theme-toggle input {
       transform: scale(1.5);
       cursor: pointer;
-      accent-color: var(--primary);
+      accent-color: var(--cyber-primary);
     }
 
     .links {
@@ -339,21 +393,22 @@
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
-      color: var(--primary);
+      color: var(--cyber-primary);
       font-weight: 600;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1.25rem;
       border-radius: 12px;
-      transition: all 0.3s;
-      background: var(--glass-bg);
+      transition: var(--transition-elastic);
+      background: var(--bg-glass);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
+      border: var(--border-glass);
     }
 
     .links a:hover {
-      background: var(--primary);
-      color: white;
+      background: rgba(0, 255, 255, 0.1);
+      color: var(--text-primary);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+      box-shadow: var(--shadow-cyber);
+      border-color: var(--cyber-primary);
     }
 
     /* Responsive Design */
@@ -369,9 +424,10 @@
         padding: 0 1rem;
       }
 
-      .buttons a {
+      .cta-button {
         width: 100%;
         justify-content: center;
+        padding: 1rem 2rem;
       }
 
       .links {
@@ -382,6 +438,39 @@
       .links a {
         width: 200px;
         justify-content: center;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+      }
+
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 0.75rem;
+      }
+
+      main {
+        padding: 0 0.75rem;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+      }
+
+      .brand img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .version {
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
       }
     }
 
@@ -412,51 +501,52 @@
   <div id="loader">
     <div class="spinner"></div>
     <div class="loader-text">Painzy API</div>
-    <div class="loader-subtitle">Preparing the best API experience ✨</div>
+    <div class="loader-subtitle">Next-Generation Platform ⚡</div>
   </div>
 
   <!-- Enhanced Content -->
   <div id="content">
     <header>
       <div class="brand">
-        <img src="https://files.catbox.moe/q01evm.jpg" alt="Painzy API Logo">
-        <span class="brand-text">Painzy API</span>
+        <img src="/src/icon.png" alt="Painzy API Logo">
+        <span class="brand-text">Painzy</span>
       </div>
-      <div class="version">v1.0.0 🚀</div>
+      <div class="version">v3.0.0 ⚡</div>
     </header>
 
     <main>
       <h1>Painzy API</h1>
-      <p>Modern & Powerful API Collection - Built for Developers, Designed for Excellence 🚀</p>
+      <p class="subtitle">Next-Generation API Platform - Where Innovation Meets Performance 🚀</p>
 
       <div class="illustration">
-        <img src="https://files.catbox.moe/75c2tn.jpg " alt="Painzy API Illustration">
+        <img src="/src/banner.jpg" alt="Painzy API Platform">
       </div>
 
-      <div class="buttons">
-        <a href="/api">
-          🚀 Explore APIs Now
-        </a>
-      </div>
+      <a href="/api" class="cta-button">
+        <i class="fas fa-rocket"></i>
+        Explore APIs
+      </a>
     </main>
 
     <footer>
-      <div>© 2025 Painzy Team. All rights reserved.</div>
-      <div class="theme-toggle">
-        <span>☀️ Light</span>
-        <input type="checkbox" id="toggleTheme">
-        <span>🌙 Dark</span>
-      </div>
-      <div class="links">
-        <a href="https://discord.gg/unionpure">
-          <i class="fab fa-discord"></i> Community
-        </a>
-        <a href="https://api.painzy.web.id">
-          <i class="fas fa-book"></i> Documentation
-        </a>
-        <a href="https://github.com/painzy740/painzy-api">
-          <i class="fab fa-github"></i> GitHub
-        </a>
+      <div class="footer-content">
+        <div>© 2024 Painzy Labs. All rights reserved.</div>
+        <div class="theme-toggle">
+          <span>☀️ Light</span>
+          <input type="checkbox" id="toggleTheme" checked>
+          <span>🌙 Dark</span>
+        </div>
+        <div class="links">
+          <a href="https://discord.gg/painzy">
+            <i class="fab fa-discord"></i> Community
+          </a>
+          <a href="https://docs.painzy.dev">
+            <i class="fas fa-book"></i> Documentation
+          </a>
+          <a href="https://github.com/painzy-api">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
       </div>
     </footer>
   </div>
@@ -464,19 +554,22 @@
   <script>
     // Enhanced Theme Toggle
     const toggle = document.getElementById("toggleTheme");
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Initialize theme
-    if (localStorage.getItem('darkMode') === 'true' || (localStorage.getItem('darkMode') === null && prefersDark)) {
-      document.body.classList.add("dark");
-      toggle.checked = true;
-    }
+    // Initialize dark theme by default
+    document.body.style.background = '#0a0a0f';
+    toggle.checked = true;
 
     toggle.addEventListener("change", () => {
-      document.body.classList.toggle("dark", toggle.checked);
-      localStorage.setItem('darkMode', toggle.checked);
+      if (toggle.checked) {
+        document.body.style.background = '#0a0a0f';
+      } else {
+        document.body.style.background = '#f8faff';
+        document.documentElement.style.setProperty('--bg-primary', '#f8faff');
+        document.documentElement.style.setProperty('--text-primary', '#2d3748');
+        document.documentElement.style.setProperty('--text-secondary', '#718096');
+      }
       
-      // Add a subtle animation feedback
+      // Add feedback animation
       document.body.style.transform = 'scale(0.99)';
       setTimeout(() => {
         document.body.style.transform = 'scale(1)';
@@ -488,62 +581,65 @@
       const loader = document.getElementById("loader");
       const content = document.getElementById("content");
       
-      // Add fade out animation
-      loader.style.opacity = '0';
-      loader.style.transform = 'scale(0.9)';
-      
       setTimeout(() => {
-        loader.style.display = "none";
-        content.style.display = "block";
+        loader.style.opacity = '0';
+        loader.style.transform = 'scale(0.9)';
         
-        // Trigger entrance animations
-        content.style.opacity = '0';
         setTimeout(() => {
-          content.style.opacity = '1';
-        }, 50);
-      }, 500);
+          loader.style.display = "none";
+          content.style.display = "block";
+          
+          setTimeout(() => {
+            content.style.opacity = '1';
+          }, 50);
+        }, 500);
+      }, 1000);
     });
 
-    // Add some interactive elements
+    // Add interactive elements
     document.addEventListener('DOMContentLoaded', () => {
       // Add hover effect to brand
       const brand = document.querySelector('.brand');
-      brand.addEventListener('mouseenter', () => {
-        brand.style.transform = 'scale(1.05)';
-      });
-      brand.addEventListener('mouseleave', () => {
-        brand.style.transform = 'scale(1)';
-      });
+      if (brand) {
+        brand.addEventListener('mouseenter', () => {
+          brand.style.transform = 'scale(1.05)';
+        });
+        brand.addEventListener('mouseleave', () => {
+          brand.style.transform = 'scale(1)';
+        });
+      }
 
-      // Add click effect to main button
-      const mainButton = document.querySelector('.buttons a');
-      mainButton.addEventListener('click', (e) => {
-        // Create ripple effect
-        const ripple = document.createElement('span');
-        const rect = mainButton.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.cssText = `
-          position: absolute;
-          width: ${size}px;
-          height: ${size}px;
-          left: ${x}px;
-          top: ${y}px;
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          transform: scale(0);
-          animation: ripple 0.6s ease-out;
-          pointer-events: none;
-        `;
-        
-        mainButton.appendChild(ripple);
-        
-        setTimeout(() => {
-          ripple.remove();
-        }, 600);
-      });
+      // Add click effect to CTA button
+      const ctaButton = document.querySelector('.cta-button');
+      if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+          // Create ripple effect
+          const ripple = document.createElement('span');
+          const rect = ctaButton.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: rgba(0, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s ease-out;
+            pointer-events: none;
+          `;
+          
+          ctaButton.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      }
 
       // Add CSS for ripple animation
       const style = document.createElement('style');
@@ -554,7 +650,7 @@
             opacity: 0;
           }
         }
-        .buttons a {
+        .cta-button {
           position: relative;
           overflow: hidden;
         }
