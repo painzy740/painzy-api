@@ -1,0 +1,20 @@
+[
+  {
+    "id": "#001",
+    "date": "2024-12-25",
+    "title": "🎉 Welcome to Painzy API v1.0!",
+    "message": "Experience our completely redesigned interface with enhanced performance, new AI endpoints, and improved developer experience. Check out our new features!"
+  },
+  {
+    "id": "#002",
+    "date": "2024-12-24",
+    "title": "🚀 New AI Models Added",
+    "message": "We've added support for Staries Ai, GPT-4.1 Vision, Claude AI, and Blackbox AI with image understanding capabilities. Perfect for your next AI-powered project!"
+  },
+  {
+    "id": "#003",
+    "date": "2024-12-23",
+    "title": "📚 Documentation Updated",
+    "message": "Our API documentation has been completely revamped with interactive examples, better code samples, and comprehensive guides. Visit api.painzy.web.id to explore!"
+  }
+]

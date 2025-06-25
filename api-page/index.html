@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Painzy API - Modern & Powerful API Collection. Built for developers, designed for excellence.">
+  <meta name="keywords" content="Painzy API, Modern API, Developer Tools, Free API, REST API">
+  <meta name="author" content="Painzy">
+  <title>Painzy API - Modern & Powerful API Collection</title>
+  
+  <!-- Enhanced Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Enhanced Color Palette */
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      
+      --bg-light: #f8faff;
+      --bg-dark: #0f1419;
+      --text-light: #2d3748;
+      --text-dark: #f7fafc;
+      --card-light: #ffffff;
+      --card-dark: #1e2532;
+      --primary: #667eea;
+      --primary-dark: #5a6fd8;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --glow: 0 0 20px rgba(102, 126, 234, 0.3);
+      
+      /* Glass Effect */
+      --glass-bg: rgba(255, 255, 255, 0.25);
+      --glass-border: rgba(255, 255, 255, 0.18);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(79, 172, 254, 0.05) 0%, transparent 50%);
+      z-index: -1;
+      animation: backgroundFloat 20s ease-in-out infinite;
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-10px) rotate(1deg); }
+      66% { transform: translateY(5px) rotate(-1deg); }
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      --glass-bg: rgba(30, 37, 50, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: var(--bg-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: all 0.3s;
+      flex-direction: column;
+    }
+
+    body.dark #loader {
+      background: var(--bg-dark);
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid transparent;
+      border-top: 4px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+      background: conic-gradient(from 0deg, var(--primary), var(--primary-dark), var(--primary));
+      mask: radial-gradient(circle at center, transparent 50%, black 50%);
+    }
+
+    .loader-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .loader-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.7;
+    }
+
+    body.dark .loader-subtitle {
+      color: var(--text-dark);
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    #content {
+      display: none;
+    }
+
+    /* Enhanced Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s;
+    }
+
+    body.dark header {
+      background: var(--glass-bg);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      gap: 0.75rem;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .brand-text {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .version {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      color: var(--primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Enhanced Main Content */
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 1rem;
+      font-weight: 900;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200% 200%;
+      animation: gradientShift 4s ease infinite;
+      letter-spacing: -0.02em;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    p {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      color: var(--text-light);
+      opacity: 0.8;
+      font-weight: 400;
+    }
+
+    body.dark p {
+      color: var(--text-dark);
+    }
+
+    /* Enhanced Illustration */
+    .illustration {
+      margin: 3rem 0;
+      position: relative;
+    }
+
+    .illustration img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 24px;
+      box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: rotate(2deg);
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+    }
+
+    .illustration img:hover {
+      transform: rotate(0deg) translateY(-10px) scale(1.02);
+      box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.2),
+        var(--glow);
+    }
+
+    /* Enhanced Button */
+    .buttons a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--primary-gradient);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 16px;
+      box-shadow: 
+        0 10px 25px rgba(102, 126, 234, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      font-size: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buttons a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .buttons a:hover::before {
+      left: 100%;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 15px 35px rgba(102, 126, 234, 0.5),
+        var(--glow);
+      text-decoration: none;
+    }
+
+    .buttons a:active {
+      transform: translateY(-1px);
+    }
+
+    /* Enhanced Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.95rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--glass-border);
+      margin-top: 4rem;
+    }
+
+    .theme-toggle {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 500;
+    }
+
+    .theme-toggle input {
+      transform: scale(1.5);
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+      transition: all 0.3s;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+    }
+
+    .links a:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      main {
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .buttons a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .links a {
+        width: 200px;
+        justify-content: center;
+      }
+    }
+
+    /* Loading Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #content > * {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    #content > *:nth-child(1) { animation-delay: 0.1s; }
+    #content > *:nth-child(2) { animation-delay: 0.2s; }
+    #content > *:nth-child(3) { animation-delay: 0.3s; }
+    #content > *:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <!-- Enhanced Loader -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="loader-text">Painzy API</div>
+    <div class="loader-subtitle">Preparing the best API experience ✨</div>
+  </div>
+
+  <!-- Enhanced Content -->
+  <div id="content">
+    <header>
+      <div class="brand">
+        <img src="https://files.catbox.moe/q01evm.jpg" alt="Painzy API Logo">
+        <span class="brand-text">Painzy API</span>
+      </div>
+      <div class="version">v1.0.0 🚀</div>
+    </header>
+
+    <main>
+      <h1>Painzy API</h1>
+      <p>Modern & Powerful API Collection - Built for Developers, Designed for Excellence 🚀</p>
+
+      <div class="illustration">
+        <img src="https://files.catbox.moe/75c2tn.jpg " alt="Painzy API Illustration">
+      </div>
+
+      <div class="buttons">
+        <a href="/api">
+          🚀 Explore APIs Now
+        </a>
+      </div>
+    </main>
+
+    <footer>
+      <div>© 2025 Painzy Team. All rights reserved.</div>
+      <div class="theme-toggle">
+        <span>☀️ Light</span>
+        <input type="checkbox" id="toggleTheme">
+        <span>🌙 Dark</span>
+      </div>
+      <div class="links">
+        <a href="https://discord.gg/unionpure">
+          <i class="fab fa-discord"></i> Community
+        </a>
+        <a href="https://api.painzy.web.id">
+          <i class="fas fa-book"></i> Documentation
+        </a>
+        <a href="https://github.com/painzy740/painzy-api">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Enhanced Theme Toggle
+    const toggle = document.getElementById("toggleTheme");
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Initialize theme
+    if (localStorage.getItem('darkMode') === 'true' || (localStorage.getItem('darkMode') === null && prefersDark)) {
+      document.body.classList.add("dark");
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+      document.body.classList.toggle("dark", toggle.checked);
+      localStorage.setItem('darkMode', toggle.checked);
+      
+      // Add a subtle animation feedback
+      document.body.style.transform = 'scale(0.99)';
+      setTimeout(() => {
+        document.body.style.transform = 'scale(1)';
+      }, 150);
+    });
+
+    // Enhanced Loading Screen
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      const content = document.getElementById("content");
+      
+      // Add fade out animation
+      loader.style.opacity = '0';
+      loader.style.transform = 'scale(0.9)';
+      
+      setTimeout(() => {
+        loader.style.display = "none";
+        content.style.display = "block";
+        
+        // Trigger entrance animations
+        content.style.opacity = '0';
+        setTimeout(() => {
+          content.style.opacity = '1';
+        }, 50);
+      }, 500);
+    });
+
+    // Add some interactive elements
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add hover effect to brand
+      const brand = document.querySelector('.brand');
+      brand.addEventListener('mouseenter', () => {
+        brand.style.transform = 'scale(1.05)';
+      });
+      brand.addEventListener('mouseleave', () => {
+        brand.style.transform = 'scale(1)';
+      });
+
+      // Add click effect to main button
+      const mainButton = document.querySelector('.buttons a');
+      mainButton.addEventListener('click', (e) => {
+        // Create ripple effect
+        const ripple = document.createElement('span');
+        const rect = mainButton.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.cssText = `
+          position: absolute;
+          width: ${size}px;
+          height: ${size}px;
+          left: ${x}px;
+          top: ${y}px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple 0.6s ease-out;
+          pointer-events: none;
+        `;
+        
+        mainButton.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+
+      // Add CSS for ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes ripple {
+          to {
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+        .buttons a {
+          position: relative;
+          overflow: hidden;
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>
