@@ -26,7 +26,7 @@ module.exports = function(app) {
             const result = await openAI({ text });
             res.status(200).json({
                 ...result,
-                creator: "RyuuXiao"
+                creator: "Painzy"
             });
         } catch (error) {
             res.status(500).json({
